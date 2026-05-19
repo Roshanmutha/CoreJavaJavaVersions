@@ -32,7 +32,6 @@ public class EmployeeDB {
         student5.setAge(18);
         student5.setSalary(40000);
         student5.setDepartment("Finance");
-        //few more students
 
         return List.of(student2, student3, student5, student1,student4);
     }
