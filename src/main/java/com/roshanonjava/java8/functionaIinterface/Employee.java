@@ -1,6 +1,7 @@
 package com.roshanonjava.java8.functionaIinterface;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Employee {   //create a student class with name, age and course
 
@@ -10,6 +11,16 @@ public class Employee {   //create a student class with name, age and course
 
     private int salary;
     private String department;
+
+    public List<String> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<String> addresses) {
+        this.addresses = addresses;
+    }
+
+    private List<String> addresses;
 
     public String getName() {
         return name;

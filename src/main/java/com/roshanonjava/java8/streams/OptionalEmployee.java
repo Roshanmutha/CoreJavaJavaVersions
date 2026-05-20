@@ -39,6 +39,11 @@ public class OptionalEmployee {
             System.out.println("Employee not found");
         }
         employeeOptional.orElseThrow();
+        System.out.println(employeeOptional.orElse(new Employee()).getSalary());
+        employeeOptional.orElseGet(Employee::new);
+        Optional.empty();
 
     }
+
+
 }
