@@ -35,6 +35,22 @@ public class DefaultSortMethodUse {
         System.out.println(employee);
     }
 
+    static void sortNullFirstValues() {
+        List<Employee> employeehasNull = new java.util.ArrayList<>(EmployeeDB.getEmployee());
+        employeehasNull.add(null);
+        Comparator<Employee> nameNullComparator = Comparator.nullsFirst(nameComparator);
+        employeehasNull.sort(nameNullComparator);
+        System.out.println(employeehasNull);
+    }
+
+    static void sortNullLastValues() {
+        List<Employee> employeehasNull = new java.util.ArrayList<>(EmployeeDB.getEmployee());
+        employeehasNull.add(null);
+        Comparator<Employee> nameNullComparator = Comparator.nullsLast(nameComparator);
+        employeehasNull.sort(nameNullComparator);
+        System.out.println(employeehasNull);
+    }
+
     static void main() {
         System.out.println("Sorting by name");
         sortByName();
@@ -42,7 +58,10 @@ public class DefaultSortMethodUse {
         sortByDept();
         System.out.println("Sorting by department and name");
         sortDeptNameChaining();
-
+        System.out.println("Sorting with null values");
+        sortNullFirstValues();
+        System.out.println("Sorting with null values and nulls last");
+        sortNullLastValues();
 
     }
 
