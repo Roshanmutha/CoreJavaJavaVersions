@@ -9,7 +9,6 @@ public interface Interface2 extends Interface1{
     }
 
     default void method1(){
-
         System.out.println("Interface1 method1 interface2 overide");
     }
 }
