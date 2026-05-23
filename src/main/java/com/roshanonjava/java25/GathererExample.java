@@ -64,5 +64,54 @@ public class GathererExample {
                              .toList();
 
         System.out.println(averages);
+
+        // Example of Gatherers.fold() - combines all elements into a single result
+        System.out.println("\n--- Gatherers.fold() Example ---");
+        var foldSum = Stream.of(1, 2, 3, 4, 5)
+                            .gather(Gatherers.fold(
+                                    () -> 0,  // initial value
+                                    (sum, element) -> sum + element  // accumulator function
+                            ))
+                            .toList();
+        System.out.println("Fold Sum: " + foldSum);
+
+        // Example of Gatherers.fold() with string concatenation
+        var foldString = Stream.of("Hello", "World", "Java", "25")
+                               .gather(Gatherers.fold(
+                                       () -> "",
+                                       (result2, element) -> result2.isEmpty() ? element : result2 + "-" + element
+                               ))
+                               .toList();
+        System.out.println("Fold String: " + foldString);
+
+        // Example of Gatherers.scan() - emits intermediate results as stream
+        System.out.println("\n--- Gatherers.scan() Example ---");
+        Stream.of(1, 2, 3, 4, 5)
+                            .gather(Gatherers.scan(
+                                    () -> 0,  // initial value
+                                    (sum, element) -> sum + element  // accumulator function
+                            ))
+                            .forEach(System.out::println);
+        ///System.out.println("Scan Sum: " + scanSum);
+
+        // Example of Gatherers.scan() with multiplication
+        var scanProduct = Stream.of(1, 2, 3, 4)
+                                .gather(Gatherers.scan(
+                                        () -> 1,
+                                        (product, element) -> product * element
+                                ))
+                                .toList();
+        System.out.println("Scan Product: " + scanProduct);
+
+        // Example of Gatherers.scan() with string building
+        var scanStringBuilder = Stream.of("a", "b", "c", "d")
+                                      .gather(Gatherers.scan(
+                                              () -> "",
+                                              (str, element) -> str + element
+                                      ))
+                                      .toList();
+        System.out.println("Scan String Builder: " + scanStringBuilder);
+
+
     }
 }
