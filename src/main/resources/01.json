@@ -1,0 +1,20 @@
+{
+  "id": 1,
+  "name": "John Doe",
+  "email": "john.doe@company.com",
+  "phone": "+1-555-0101",
+  "department": "Engineering",
+  "position": "Senior Software Engineer",
+  "salary": 95000,
+  "joinDate": "2020-01-15",
+  "isActive": true,
+  "address": {
+    "street": "123 Main Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "zipCode": "94102",
+    "country": "USA"
+  },
+  "skills": ["Java", "Spring Boot", "Microservices", "REST APIs"],
+  "manager": "Jane Smith"
+}
